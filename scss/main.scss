@@ -1,3 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap');
+
 * {
   box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(0, 100%, 98%);
+  opacity: 0.9;
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 2em;
+
+  & .logo {
+    width: 115px;
+  }
+}
+
+.image-container {
+  & .hero {
+    width: 100%;
+  }
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1em 2em;
+
+  & h1 {
+    font-size: 2.7rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    margin-bottom: 0.4em;
+    color: hsl(0, 6%, 24%);
+
+    & span {
+      font-weight: 300;
+      color: hsl(0, 36%, 70%);
+    }
+  }
+
+  & p {
+    font-size: 1rem;
+    letter-spacing: 0.8px;
+    margin: 0;
+    color: hsl(0, 36%, 70%);
+    font-weight: 600;
+    opacity: 0.85;
+  }
+}
+
+.email-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em auto 3em auto;
+  position: relative;
+
+  & .email {
+    width: 80%;
+    height: 45px;
+    border-radius: 20px;
+    padding: 0.5em 1em;
+    font-size: 0.9rem;
+    color: hsl(0, 36%, 70%);
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid hsla(0, 36%, 70%, 0.651);
+  }
+
+  & .error {
+    position: absolute;
+    right: 31%;
+    visibility: hidden;
+  }
+
+  & .button-container {
+    position: absolute;
+    background-color: hsl(0, 74%, 74%);
+    width: 60px;
+    height: 45px;
+    text-align: center;
+    border-radius: 43%;
+    padding: 0.7em;
+    right: 10%;
+    opacity: 0.9;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten(hsl(0, 74%, 74%), $amount: 12);
+    }
+
+    & .button {
+      width: 14px;
+    }
+  }
+
+  & small {
+    color: red;
+    position: absolute;
+    bottom: -45%;
+    left: 12%;
+    font-size: 0.8rem;
+    visibility: hidden;
+  }
+}
+
+footer {
+  text-align: center;
+  color: lightgray;
+  margin-top: 4em;
+  & a {
+    color: lightblue;
+  }
 }
