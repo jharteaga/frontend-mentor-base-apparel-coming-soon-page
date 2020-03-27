@@ -16,8 +16,14 @@ body {
   .header-container .logo {
     width: 115px; }
 
-.image-container .hero {
-  width: 100%; }
+.image-container {
+  position: relative; }
+  .image-container .hero-mobile {
+    width: 100%;
+    display: block; }
+  .image-container .hero-desktop {
+    width: 100%;
+    display: none; }
 
 .info-container {
   display: flex;
@@ -93,3 +99,74 @@ footer {
   margin-top: 4em; }
   footer a {
     color: lightblue; }
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  .header-container {
+    padding: 2.2em; }
+    .header-container .logo {
+      width: 140px; }
+  .info-container {
+    padding: 1em 3em; }
+    .info-container h1 {
+      font-size: 3.5rem;
+      letter-spacing: 9px; }
+    .info-container p {
+      font-size: 1.1rem; }
+  .email-container .email {
+    width: 70%;
+    height: 55px;
+    font-size: 0.95rem; }
+  .email-container .error {
+    position: absolute;
+    right: 25%;
+    width: 30px; }
+  .email-container .button-container {
+    height: 54px;
+    padding: 0.9em;
+    right: 13.8%; }
+    .email-container .button-container .button {
+      width: 16px; }
+  .email-container small {
+    bottom: -47%;
+    left: 16%;
+    font-size: 0.95rem; } }
+
+@media screen and (min-width: 801px) and (max-width: 1120px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    body .main-container {
+      background-image: url("../images/bg-pattern-desktop.svg");
+      background-color: #fff5f5;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: grid;
+      grid-template-columns: 50% auto;
+      grid-template-rows: 20% 40% 40%;
+      grid-template-areas: 'logo img' 'info img' 'email img';
+      border: 1px solid #3d3d3d;
+      border-radius: 10px;
+      width: 100vw;
+      height: 100vh; }
+  .header-container {
+    grid-area: logo;
+    padding-top: 2.5em;
+    margin-left: 2em;
+    align-items: flex-start; }
+    .header-container .logo {
+      width: 150px; }
+  .info-container {
+    grid-area: info; }
+  .email-container {
+    grid-area: email; }
+  footer {
+    grid-area: footer; }
+  .image-container {
+    grid-area: img; }
+    .image-container .hero-mobile {
+      display: none; }
+    .image-container .hero-desktop {
+      display: block;
+      height: 100%; } }

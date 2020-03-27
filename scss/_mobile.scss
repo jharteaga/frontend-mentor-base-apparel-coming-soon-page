@@ -1,0 +1,116 @@
+@include mediaMd {
+  .header-container {
+    padding: 2.2em;
+
+    & .logo {
+      width: 140px;
+    }
+  }
+
+  .info-container {
+    padding: 1em 3em;
+
+    & h1 {
+      font-size: 3.5rem;
+      letter-spacing: 9px;
+    }
+
+    & p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .email-container {
+    & .email {
+      width: 70%;
+      height: 55px;
+      font-size: 0.95rem;
+    }
+
+    & .error {
+      position: absolute;
+      right: 25%;
+      width: 30px;
+    }
+
+    & .button-container {
+      height: 54px;
+      padding: 0.9em;
+      right: 13.8%;
+
+      & .button {
+        width: 16px;
+      }
+    }
+
+    & small {
+      bottom: -47%;
+      left: 16%;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+@include mediaLg {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .main-container {
+      background-image: url('../images/bg-pattern-desktop.svg');
+      background-color: hsl(0, 100%, 98%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: grid;
+      grid-template-columns: 50% auto;
+      grid-template-rows: 20% 40% 40%;
+      grid-template-areas:
+        'logo img'
+        'info img'
+        'email img';
+
+      border: 1px solid rgb(61, 61, 61);
+      border-radius: 10px;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+
+  .header-container {
+    grid-area: logo;
+    padding-top: 2.5em;
+    margin-left: 2em;
+    align-items: flex-start;
+
+    & .logo {
+      width: 150px;
+    }
+  }
+
+  .info-container {
+    grid-area: info;
+  }
+
+  .email-container {
+    grid-area: email;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  .image-container {
+    grid-area: img;
+
+    & .hero-mobile {
+      display: none;
+    }
+
+    & .hero-desktop {
+      display: block;
+      height: 100%;
+    }
+  }
+}

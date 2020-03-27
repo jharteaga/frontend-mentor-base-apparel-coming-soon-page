@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap');
+@import 'config';
 
 * {
   box-sizing: border-box;
@@ -23,8 +23,16 @@ body {
 }
 
 .image-container {
-  & .hero {
+  position: relative;
+
+  & .hero-mobile {
     width: 100%;
+    display: block;
+  }
+
+  & .hero-desktop {
+    width: 100%;
+    display: none;
   }
 }
 
@@ -124,3 +132,5 @@ footer {
     color: lightblue;
   }
 }
+
+@import 'mobile';
