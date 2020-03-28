@@ -53,35 +53,29 @@
 
 @include mediaLg {
   body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    height: 100vh;
+    width: 100%;
     & .main-container {
       background-image: url('../images/bg-pattern-desktop.svg');
       background-color: hsl(0, 100%, 98%);
       background-repeat: no-repeat;
       background-size: cover;
       display: grid;
-      grid-template-columns: 50% auto;
-      grid-template-rows: 20% 40% 40%;
+      grid-template-columns: 50% 10% auto;
+      grid-template-rows: 20% 30% 30% 20%;
       grid-template-areas:
-        'logo img'
-        'info img'
-        'email img';
-
-      border: 1px solid rgb(61, 61, 61);
+        'logo space img'
+        'info space img'
+        'email space img'
+        'copyr space img';
       border-radius: 10px;
-      width: 100vw;
-      height: 100vh;
     }
   }
 
   .header-container {
     grid-area: logo;
-    padding-top: 2.5em;
-    margin-left: 2em;
+    padding-top: 4em;
+    margin-left: 5em;
     align-items: flex-start;
 
     & .logo {
@@ -91,14 +85,48 @@
 
   .info-container {
     grid-area: info;
+    align-items: flex-start;
+    margin-left: 5em;
+    & h1 {
+      text-align: left;
+      font-size: 4rem;
+      line-height: 65px;
+    }
+
+    & p {
+      font-size: 0.9rem;
+      text-align: left;
+      line-height: 25px;
+    }
   }
 
   .email-container {
     grid-area: email;
-  }
+    margin-left: 7em;
 
-  footer {
-    grid-area: footer;
+    & .email {
+      width: 35vw;
+      height: 50px;
+      padding: 0.5em 2em;
+    }
+
+    & .error {
+      right: 18%;
+    }
+
+    & .button-container {
+      width: 60px;
+      height: 49px;
+      padding: 0.7em;
+      right: -4%;
+      opacity: 0.9;
+      cursor: pointer;
+    }
+
+    & small {
+      left: 4%;
+      font-size: 0.85rem;
+    }
   }
 
   .image-container {
@@ -110,7 +138,114 @@
 
     & .hero-desktop {
       display: block;
-      height: 100%;
+      height: 100vh;
     }
+  }
+
+  .footer {
+    grid-area: copyr;
+    margin-bottom: 1em;
+  }
+}
+
+@include mediaXl {
+  body {
+    height: 100vh;
+    width: 100%;
+    & .main-container {
+      background-image: url('../images/bg-pattern-desktop.svg');
+      background-color: hsl(0, 100%, 98%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: grid;
+      grid-template-columns: 55% 5% auto;
+      grid-template-rows: 20% 30% 30% 20%;
+      grid-template-areas:
+        'logo space img'
+        'info space img'
+        'email space img'
+        'copyr space img';
+      border-radius: 10px;
+    }
+  }
+
+  .header-container {
+    grid-area: logo;
+    padding-top: 4em;
+    margin-left: 8em;
+    align-items: flex-start;
+
+    & .logo {
+      width: 160px;
+    }
+  }
+
+  .info-container {
+    grid-area: info;
+    align-items: flex-start;
+    margin-left: 8em;
+    & h1 {
+      text-align: left;
+      font-size: 4rem;
+      line-height: 65px;
+    }
+
+    & p {
+      font-size: 0.9rem;
+      text-align: left;
+      line-height: 25px;
+      padding-right: 14em;
+      margin-bottom: 0;
+    }
+  }
+
+  .email-container {
+    grid-area: email;
+    margin-left: 10em;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 0;
+
+    & .email {
+      width: 395px;
+      height: 50px;
+      padding: 0.5em 1.5em;
+    }
+
+    & .error {
+      right: 18%;
+    }
+
+    & .button-container {
+      width: 60px;
+      height: 50px;
+      padding: 0.7em;
+      right: -4%;
+      opacity: 0.9;
+      cursor: pointer;
+    }
+
+    & small {
+      left: 4%;
+      font-size: 0.85rem;
+    }
+  }
+
+  .image-container {
+    grid-area: img;
+
+    & .hero-mobile {
+      display: none;
+    }
+
+    & .hero-desktop {
+      display: block;
+      height: 100vh;
+    }
+  }
+
+  .footer {
+    grid-area: copyr;
+    margin-bottom: 1em;
   }
 }
