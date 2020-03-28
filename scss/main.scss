@@ -115,12 +115,21 @@ body {
   }
 
   & small {
-    color: red;
     position: absolute;
     bottom: -45%;
     left: 12%;
     font-size: 0.8rem;
     visibility: hidden;
+
+    &.success {
+      color: green;
+      visibility: visible;
+    }
+
+    &.error {
+      color: red;
+      visibility: visible;
+    }
   }
 }
 

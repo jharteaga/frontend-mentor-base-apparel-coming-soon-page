@@ -86,12 +86,17 @@ body {
     .email-container .button-container .button {
       width: 14px; }
   .email-container small {
-    color: red;
     position: absolute;
     bottom: -45%;
     left: 12%;
     font-size: 0.8rem;
     visibility: hidden; }
+    .email-container small.success {
+      color: green;
+      visibility: visible; }
+    .email-container small.error {
+      color: red;
+      visibility: visible; }
 
 footer {
   text-align: center;
